@@ -1,0 +1,7 @@
+name = "stjohns-frontend"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "out"
+
+# NOTE: NEXT_PUBLIC_* variables must be set in Cloudflare Pages dashboard
+# (Settings > Environment variables) - they are baked in at build time.
+# The [vars] section here only applies to Workers runtime, not static builds.

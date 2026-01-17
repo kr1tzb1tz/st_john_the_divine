@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://stjohngochurch.org/sitemap.xml
+Sitemap: https://www.stjohngochurch.org/sitemap.xml

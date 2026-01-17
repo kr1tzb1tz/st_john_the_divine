@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for http://stjohngochurch.org/</title>
+  <link>http://stjohngochurch.org/</link>
+
+<item>
+     <link>https://stjohngochurch.org/</link>
+     <title>St. John the Divine Orthodox Church</title>
+     <description>St. John the Divine Orthodox Church</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  

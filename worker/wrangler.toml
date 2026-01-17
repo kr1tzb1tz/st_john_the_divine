@@ -1,0 +1,15 @@
+name = "stjohns-worker"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# R2 bucket for sermon audio
+[[r2_buckets]]
+binding = "SAMPLE_SERMON_BUCKET"
+bucket_name = "stjohns-sample-sermon"
+
+# Secrets are added via:
+# wrangler secret put PUSHOVER_API_TOKEN
+# wrangler secret put PUSHOVER_USER_KEYS
+#
+# PUSHOVER_USER_KEYS can contain multiple keys separated by commas:
+# e.g., "userkey1,userkey2,userkey3"

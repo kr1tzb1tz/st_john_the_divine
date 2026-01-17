@@ -1,0 +1,6 @@
+# Pushover API token (from https://pushover.net/apps - create an app)
+PUSHOVER_API_TOKEN=
+
+# Pushover user keys (comma-separated for multiple recipients)
+# Find your user key at https://pushover.net after logging in
+PUSHOVER_USER_KEYS=
