@@ -72,12 +72,22 @@ async function fetchGoogleCalendarEvents(): Promise<CalendarEvent[]> {
 
     const data = await response.json();
 
-    return (data.items || []).map((event: any) => ({
-      title: event.summary || "Untitled Event",
-      start: new Date(event.start.dateTime || event.start.date),
-      end: new Date(event.end.dateTime || event.end.date),
-      allDay: !event.start.dateTime,
-    }));
+    return (data.items || []).map((event: any) => {
+      const isAllDay = !event.start.dateTime;
+      let end = new Date(event.end.dateTime || event.end.date);
+      // Google Calendar all-day event end dates are exclusive (e.g. a Jan 15
+      // event has end date Jan 16). Subtract a day so react-big-calendar
+      // doesn't render the event bleeding into the next day.
+      if (isAllDay) {
+        end.setDate(end.getDate() - 1);
+      }
+      return {
+        title: event.summary || "Untitled Event",
+        start: new Date(event.start.dateTime || event.start.date),
+        end,
+        allDay: isAllDay,
+      };
+    });
   } catch (error) {
     console.error("Failed to fetch calendar events:", error);
     return [];
