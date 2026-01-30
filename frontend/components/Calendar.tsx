@@ -74,16 +74,25 @@ async function fetchGoogleCalendarEvents(): Promise<CalendarEvent[]> {
 
     return (data.items || []).map((event: any) => {
       const isAllDay = !event.start.dateTime;
-      let end = new Date(event.end.dateTime || event.end.date);
-      // Google Calendar all-day event end dates are exclusive (e.g. a Jan 15
-      // event has end date Jan 16). Subtract a day so react-big-calendar
-      // doesn't render the event bleeding into the next day.
+      // Date-only strings ("YYYY-MM-DD") are parsed as UTC by Date constructor,
+      // which shifts them to the prior day in negative-UTC timezones. Append
+      // T00:00:00 to force local-time parsing.
+      const parseLocal = (d: string) => new Date(d + "T00:00:00");
+      let start: Date;
+      let end: Date;
       if (isAllDay) {
+        start = parseLocal(event.start.date);
+        // Google all-day end dates are exclusive (Jan 15 event → end Jan 16),
+        // so subtract a day for correct display.
+        end = parseLocal(event.end.date);
         end.setDate(end.getDate() - 1);
+      } else {
+        start = new Date(event.start.dateTime);
+        end = new Date(event.end.dateTime);
       }
       return {
         title: event.summary || "Untitled Event",
-        start: new Date(event.start.dateTime || event.start.date),
+        start,
         end,
         allDay: isAllDay,
       };
