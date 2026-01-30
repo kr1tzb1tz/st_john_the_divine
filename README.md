@@ -59,9 +59,10 @@ PUSHOVER_USER_KEYS=key1,key2,key3
    - `NEXT_PUBLIC_GOOGLE_API_KEY` - Google Calendar API key
 
 ### Worker (Auto-deploy)
-Deploys automatically via GitHub Actions when `worker/**` files change on `main`.
+Deploys automatically via GitHub Actions when `worker/**` files change on `main`. These are assigned in the repository's secrets and used in the `.github/workflows/deploy-worker.yml` script on deploy.
 
-**Required GitHub secret**: `CLOUDFLARE_API_TOKEN`
+**Required GitHub secret 1**: `CLOUDFLARE_API_TOKEN`
+**Required GitHub secret 2**: `CLOUDFLARE_ACCOUNT_ID`
 
 **Worker secrets** (set via wrangler):
 ```bash
