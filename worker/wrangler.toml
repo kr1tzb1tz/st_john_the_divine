@@ -12,4 +12,4 @@ bucket_name = "stjohns-sample-sermon"
 # wrangler secret put PUSHOVER_USER_KEYS
 #
 # PUSHOVER_USER_KEYS can contain multiple keys separated by commas:
-# e.g., "userkey1,userkey2,userkey3"
+# e.g., "userkey1,userkey2,userkey3" (who gets notified)
