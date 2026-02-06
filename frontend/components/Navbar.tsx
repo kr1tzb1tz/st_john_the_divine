@@ -39,9 +39,12 @@ export default function Navbar() {
     { title: "Calendar", link: "#calendar" },
     { title: "Who We Are", link: "#who-we-are" },
     { title: "Connect", link: "connect" },
-    { title: "Support", link: "https://www.eservicepayments.com/cgi-bin/Vanco_ver3.vps?appver3=wWsk24ZWJSTZKsGd1RMKlg0BDvsSG3VIWQCPJNNxD8upkiY7JlDavDsozUE7KG0nFx2NSo8LdUKGuGuF396vbbCTM0QTbxYiQKL-XzyN2NOXHubq5Z7ap5JVmPErc4ZeYHCKCZhESjGNQmZ5B-6dxyCAINhtkEV_5Dl0afiEwm8%3D&ver=3" },
+    {
+      title: "Support",
+      link: "https://www.eservicepayments.com/cgi-bin/Vanco_ver3.vps?appver3=wWsk24ZWJSTZKsGd1RMKlg0BDvsSG3VIWQCPJNNxD8upkiY7JlDavDsozUE7KG0nFx2NSo8LdUKGuGuF396vbbCTM0QTbxYiQKL-XzyN2NOXHubq5Z7ap5JVmPErc4ZeYHCKCZhESjGNQmZ5B-6dxyCAINhtkEV_5Dl0afiEwm8%3D&ver=3",
+    },
     // NOTE: Uncomment and update link when bake sale is active
-    // { title: "Bake Sale", link: "https://holiday-bake-sale.square.site/" },
+    { title: "Bake Sale", link: "#bake-sale" },
     // NOTE: Uncomment and update link when apparel sale is active
     // { title: "Apparel Sale", link: "https://sjtd2025.itemorder.com/" },
   ];
@@ -161,7 +164,7 @@ export default function Navbar() {
                 >
                   {item.title}
                 </Button>
-              )
+              ),
             )}
           </Box>
         </Toolbar>
