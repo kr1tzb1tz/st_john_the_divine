@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const baseUrl = "https://saintinnocent.org";
+const baseUrl = "https://stjohngochurch.org";
 const currentDate = new Date().toISOString().split("T")[0];
 
 const pages = [
@@ -10,16 +10,16 @@ const pages = [
     priority: "1.0",
     changefreq: "weekly",
   },
-  {
-    url: "/ministries",
-    priority: "0.8",
-    changefreq: "monthly",
-  },
-  {
-    url: "/clergy",
-    priority: "0.8",
-    changefreq: "yearly",
-  },
+  //{
+  //url: "/ministries",
+  //priority: "0.8",
+  //changefreq: "monthly",
+  //},
+  //{
+  //url: "/clergy",
+  //priority: "0.8",
+  //changefreq: "yearly",
+  //},
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -34,7 +34,7 @@ ${pages
     <lastmod>${currentDate}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
-  </url>`
+  </url>`,
   )
   .join("\n")}
 </urlset>`;
@@ -42,4 +42,3 @@ ${pages
 const sitemapPath = path.join(__dirname, "..", "public", "sitemap.xml");
 fs.writeFileSync(sitemapPath, sitemap, "utf8");
 console.log(`✅ Generated sitemap.xml with date: ${currentDate}`);
-
