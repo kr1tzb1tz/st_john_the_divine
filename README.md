@@ -114,4 +114,4 @@ Content is hardcoded in components. To modify:
 
 ## License
 
-Private use for St. John the Divine Greek Orthodox Church.
+Private for St. John the Divine Greek Orthodox Church.
