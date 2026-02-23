@@ -30,7 +30,7 @@ const config: BakeSaleConfig = {
   orderWindowEnd: "March 20th",
   orderUrl: "https://holiday-bake-sale.square.site/",
   pickupDate: "Tuesday, March 31, 2026",
-  pickupTime: "3pm to 6pm",
+  pickupTime: "11am to 3pm",
   beneficiary: "All proceeds support local charity",
   backgroundColor: "#fdf6f0",
   accentColor: "#c9a4e8",
